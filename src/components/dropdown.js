@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import searchList from '../data/search.json';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import searchList from "../data/search.json";
 
 function Dropdown() {
   const [isDisplayed, setIsDisplayed] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [typingLength, setTypingLegnth] = useState(0);
 
-  const searchTitle = 'All Symbols';
-  const notFoundResult = '일치하는 결과가 없습니다.';
+  const searchTitle = "All Symbols";
+  const notFoundResult = "일치하는 결과가 없습니다.";
 
   const handleFilterKeyword = (e) => {
     const inputValue = e.target.value;
@@ -34,7 +34,7 @@ function Dropdown() {
 
   return (
     <>
-      <Link to={'/'}>돌아가기</Link>
+      <Link to={"/"}>돌아가기</Link>
       <div
         className="selectBtn"
         onClick={() => {
